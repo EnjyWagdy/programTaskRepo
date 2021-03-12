@@ -1,0 +1,136 @@
+@import 'colors';
+@import 'media-queries';
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  background: $light;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1400px) / 2);
+  z-index: 10;
+  position: relative;
+  .displaytablet{
+    @include tablet{
+      display: inline-block !important;
+    }
+  }
+.navbar-toggler{
+  display: none;
+  @include tablet{
+    display: inline-block;
+    position: absolute;
+    left: 43px;
+  }
+  @include mobile{
+    display: inline-block;
+    left: 19px;
+
+  }
+}
+.navbar-collapse{
+  background-color: $light;
+.dropdown-menu{
+  border: none;
+  padding: 0px 15px;
+  .dropdown-item{
+    font-size: 14px;
+    line-height: 19px;
+    padding-bottom: 20px;
+    background-color: $light;
+    font-weight: 500;
+    color: $light;
+  }
+}
+  .dropdown-toggle::after{
+    float: right;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .nav-link{
+    padding: 21px 30px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    color: $dark;
+  }
+ 
+  .nav-item{
+  .navbar__menu--links{
+    padding: 15px 0;
+  } 
+  
+  }
+
+}
+
+  &__logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 24px;
+    @extend %align-center;
+
+  }
+
+  &__bars {
+    opacity: 0;
+
+    @include tablet {
+      color: $dark;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      font-size: 2rem;
+    }
+  }
+ 
+  &__menu {
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 24px;
+    @include mobile{
+      display: none;
+    }
+    
+
+
+ 
+
+
+    &--links {
+      color: $black;
+      @extend %align-center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      font-size: 16px;
+      opacity: 0.6;
+      font-weight: 400;
+      text-align: left;
+      text-transform: capitalize;
+      letter-spacing: 0.16px;
+      &:hover {
+        color: $blue;
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+      &:focus {
+        color: $blue;
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+
+  }
+}
+  
+ 
+
